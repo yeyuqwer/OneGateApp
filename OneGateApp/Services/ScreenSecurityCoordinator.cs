@@ -4,13 +4,13 @@ namespace NeoOrder.OneGate.Services;
 
 static class ScreenSecurityCoordinator
 {
-    static readonly object syncRoot = new();
+    static readonly Lock syncRoot = new();
     static int activeScopes;
     static int generation;
 
     public static void Enter(IScreenSecurity screenSecurity)
     {
-        bool shouldActivate = false;
+        bool shouldActivate;
         lock (syncRoot)
         {
             activeScopes++;
