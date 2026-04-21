@@ -9,7 +9,7 @@
         <og:FormattedStringConverter x:Key="FormattedStringConverter" />
     </ContentPage.Resources>
     <Grid Margin="20" RowDefinitions="4*,*,*" RowSpacing="20">
-        <Image Source="logo_vertical.png" WidthRequest="150">
+        <Image Source="logo_vertical.png" WidthRequest="150" HeightRequest="150">
             <Image.Behaviors>
                 <toolkit:IconTintColorBehavior TintColor="{toolkit:AppThemeResource Primary}" />
             </Image.Behaviors>
