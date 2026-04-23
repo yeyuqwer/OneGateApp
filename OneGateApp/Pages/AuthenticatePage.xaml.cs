@@ -29,6 +29,7 @@ public partial class AuthenticatePage : ContentPage, IQueryAttributable
         this.wallet = walletProvider.GetWallet()!;
         this.httpClient = httpClient;
         InitializeComponent();
+        Loaded += OnLoaded;
     }
 
     public void ApplyQueryAttributes(IDictionary<string, object> query)
@@ -38,9 +39,8 @@ public partial class AuthenticatePage : ContentPage, IQueryAttributable
         Payload = (AuthenticationChallengePayload)query["payload"];
     }
 
-    protected override void OnAppearing()
+    void OnLoaded(object? sender, EventArgs e)
     {
-        base.OnAppearing();
         Authenticate();
     }
 
